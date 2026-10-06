@@ -6,29 +6,36 @@ calculara la suma del 1 al 100
 42
 """
 
-# Importamos biblioteca time
+# Importamos biblioteca time/Tiempo
 import time
 
-#Crear las variables para el problema
-n = 100
-the_sum = 0
+# Variable para guardar el data set
+dataset = []
 
-#Tomando el tiempo 1
-timestamp_01 = time.time()
+# Repetir para n = 500, 1000, 1500, 2000, ... 5000
+for repetition in range(1, 11):
 
-#Iniciando la suma
-#100
-while(n > 0):
-    the_sum = the_sum + n #100 + 99 + 98 + ... + 1
-    n = n - 1
+    #Crear las variables para el problema
+    n = repetition * 500
+    the_sum = 0
 
-#Tomamos el tiempo 2
-timestamp_02 = time.time()
+    #Tomando el tiempo 1
+    timestamp_01 = time.time()
 
-#Imprimir solución
-print(f"La suma es: {the_sum}")
+    #Iniciando la suma
+    while(n > 0):
+        the_sum = the_sum + n
+        n = n - 1
 
-#Calcular el time
-elapsed_time = round((timestamp_02-timestamp_01) * 1e6, 2)
-print(f"Tiempo de ejecucución: {elapsed_time} us")
+    #Tomamos el tiempo 2
+    timestamp_02 = time.time()
 
+    #Calcular el time
+    elapsed_time = round((timestamp_02-timestamp_01) * 1e6, 2)
+
+    # Agregar los datos al dataset
+    dataset.append((repetition * 500, elapsed_time, the_sum))
+
+# Imprimir el dataset
+for tup in dataset:
+    print(tup)
