@@ -1,0 +1,55 @@
+"""
+Generators 
+
+Los generadosres son funciones que pueden pausar su ejecución. 
+
+cuando se invoca una funcion generadora devuelve un obketo generador (aka iterador).
+
+El codigp dentro de la funcion no se ejecuta de inmediato, solo se compila.
+
+La funcion se ejecuta unicamnete cuando iteras sobre el generador.
+
+"""
+
+def my_generator(): 
+    yield 1
+    yield 2
+    yield 3 
+    yield 4  
+    yield 1
+    yield 2
+    yield 3 
+    yield 4  
+    yield 1
+    yield 2
+    yield 3 
+    yield 4  
+    yield 1
+    yield 2
+    yield 3 
+    yield 4  
+    yield 1
+    yield 2
+    yield 3 
+    yield 4  
+    yield 1
+    yield 2
+    yield 3 
+    yield 4  
+    yield 1
+    yield 2
+    yield 3 
+    yield 4 
+
+# Se invoca funcion generadora
+my_iterator = my_generator()
+
+# Se itera manualmente sobre el genarador
+# print(next(my_iterator)) #Imprime 1
+# print(next(my_iterator)) #Imprime 2
+# print(next(my_iterator)) #Imprime 3
+# print(next(my_iterator)) #Imprime 4
+
+# Los iteradores se pueden iterar con un for
+for value in my_iterator:
+    print(value)
